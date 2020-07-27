@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
   end
   
   def self.most_popular_show
-    Show.maximum(:rating).first
+    Show.maximum(:rating)
   end 
   
   def self.lowest_rating
@@ -26,6 +26,6 @@ class Show < ActiveRecord::Base
   end 
   
   def self.shows_by_alphabetical_order
-    Show.order
+    Show.order("name", :asc)
   end  
 end
